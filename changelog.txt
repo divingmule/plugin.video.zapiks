@@ -1,3 +1,6 @@
+Version 1.1.1
+update fanart
+
 Version 1.1.0
 added setting "Enable HD" default is True
 moved video filter setting to a list item

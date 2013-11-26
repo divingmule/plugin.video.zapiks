@@ -1,7 +1,5 @@
 import urllib
 import urllib2
-import re
-import os
 from urlparse import urlparse, parse_qs
 from traceback import format_exc
 
@@ -21,7 +19,6 @@ icon = addon.getAddonInfo('icon')
 fanart = addon.getAddonInfo('fanart')
 language = addon.getLocalizedString
 base_url = 'http://www.zapiks.com'
-icon_path = 'http://zapiks-xbmc.googlecode.com/svn/images/'
 
 
 def addon_log(string):
@@ -169,6 +166,7 @@ def add_dir(name, url, iconimage, mode):
     if mode == 'resolve_url':
         isfolder = False
         listitem.setProperty('IsPlayable', 'true')
+    listitem.setProperty("Fanart_Image", fanart)
     listitem.setInfo(type="Video", infoLabels={'Title': name})
     xbmcplugin.addDirectoryItem(int(sys.argv[1]), url, listitem, isfolder)
 
